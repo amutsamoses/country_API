@@ -1,4 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const countriesContainer = document.getElementById("countries-container");
+  const searchInput = document.getElementById("search");
+  const regionFilter = document.getElementById("region-filter");
+  const themeSwitcher = document.getElementById("dark-mode");
+  const countryDetailsModal = document.getElementById("country-details");
+  const countryInfo = document.getElementById("country-info");
+  const modalClose = document.querySelector(".close");
+
+  let allCountries = [];
+
   fetch("data.json") // Fetch data from JSON file
     .then((response) => {
       if (!response.ok) {
@@ -16,19 +26,9 @@ document.addEventListener("DOMContentLoaded", () => {
         "<p>Error loading countries data. Please try again later.</p>";
     });
 
-  const countriesContainer = document.getElementById("countries-container");
-  const searchInput = document.getElementById("search");
-  const regionFilter = document.getElementById("region-filter");
-  const themeSwitcher = document.getElementById("theme-switcher");
-  const countryDetailsModal = document.getElementById("country-details");
-  const countryInfo = document.getElementById("country-info");
-  const modalClose = document.querySelector(".close");
-
-  let allCountries = [];
-
   // Display countries
   function displayCountries(countries) {
-    countriesContainer.innerText = "";
+    countriesContainer.innerHTML = "";
     countries.forEach((country) => {
       const countryCard = document.createElement("div");
       countryCard.classList.add("country-card");
