@@ -131,6 +131,11 @@ body.dark-mode {
   --element-color: hsl(209, 23%, 22%);
 }
 
+body.dark-mode button {
+  border-color: white;
+  color: white; /* Set text color to white in dark mode */
+}
+
 /* body.light-mode {
   background-color: white;
   color: black;
