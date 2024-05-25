@@ -174,10 +174,28 @@ body:not(.dark-mode) select {
   border-color: #ccc;
 }
 
-button {
-  padding: 0.5rem 1rem;
+/* button {
+  padding: 1rem 1rem;
   cursor: pointer;
   border-radius: 6rem;
+} */
+
+button {
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  border: 2px solid black;
+  background-color: transparent;
+  color: black;
+}
+
+input,
+select {
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  border: 1px solid #ccc;
 }
 @media (min-width: 1024px) {
   body {

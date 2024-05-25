@@ -68,13 +68,13 @@ document.addEventListener("DOMContentLoaded", () => {
   themeSwitcher.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
     themeSwitcher.textContent = document.body.classList.contains("dark-mode")
-      ? "Light Mode"
-      : "Dark Mode";
+      ? "☀ Light Mode"
+      : "🌙 Dark Mode";
   });
 
   // Show country details
   function showCountryDetails(country) {
-    countryInfo.innerText = `
+    countryInfo.innerHTML = `
               <h2>${country.name}</h2>
               <img src="${country.flags.png}" alt="${country.name}">
               <p><strong>Population:</strong> ${country.population.toLocaleString()}</p>
